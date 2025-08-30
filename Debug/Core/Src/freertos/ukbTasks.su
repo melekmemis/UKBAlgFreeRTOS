@@ -1,0 +1,11 @@
+../Core/Src/freertos/ukbTasks.c:79:6:createTasks	8	static
+../Core/Src/freertos/ukbTasks.c:114:6:BnoTaskInit	16	static
+../Core/Src/freertos/ukbTasks.c:149:6:HAL_UARTEx_RxEventCallback	24	static,ignoring_inline_asm
+../Core/Src/freertos/ukbTasks.c:175:6:GPSTaskInit	24	static
+../Core/Src/freertos/ukbTasks.c:210:6:MsTaskInit	16	static
+../Core/Src/freertos/ukbTasks.c:234:6:RsTaskInit	16	static
+../Core/Src/freertos/ukbTasks.c:268:6:RsSendTaskInit	16	static
+../Core/Src/freertos/ukbTasks.c:358:6:LoRaTaskInit	16	static
+../Core/Src/freertos/ukbTasks.c:400:6:flightStatTaskInit	16	static
+../Core/Src/freertos/ukbTasks.c:418:6:sdCardTaskInit	16	static
+../Core/Src/freertos/ukbTasks.c:431:6:Restart_UART_DMA_RX	8	static

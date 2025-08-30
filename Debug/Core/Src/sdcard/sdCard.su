@@ -1,0 +1,3 @@
+../Core/Src/sdcard/sdCard.c:19:6:sdCardOpen	8	static
+../Core/Src/sdcard/sdCard.c:24:6:sdCardClose	8	static
+../Core/Src/sdcard/sdCard.c:28:6:sdCardWrite	216	static
