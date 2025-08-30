@@ -1,0 +1,5 @@
+../Core/Src/bno055/bno055UKB.c:31:8:i2c_bus_write	32	static
+../Core/Src/bno055/bno055UKB.c:37:8:i2c_bus_read	32	static
+../Core/Src/bno055/bno055UKB.c:43:6:delay_msec	16	static
+../Core/Src/bno055/bno055UKB.c:48:6:bno055_initialize	8	static
+../Core/Src/bno055/bno055UKB.c:72:6:bno055ReadAngles	8	static

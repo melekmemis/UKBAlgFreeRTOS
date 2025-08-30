@@ -90,6 +90,8 @@ void Error_Handler(void);
 extern I2C_HandleTypeDef hi2c1;
 extern I2C_HandleTypeDef hi2c2;
 
+extern RTC_HandleTypeDef hrtc;
+
 extern SPI_HandleTypeDef hspi3;
 
 extern UART_HandleTypeDef huart1;

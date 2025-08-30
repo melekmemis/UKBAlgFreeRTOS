@@ -107,6 +107,9 @@ void bno055ReadAngles(void)
     accX = Kalman_Update(&accXFilter, accXraw);
     accY = Kalman_Update(&accYFilter, accYraw);
     accZ = Kalman_Update(&accZFilter, accZraw);
+    gyroX = Kalman_Update(&gyroXFilter, gyroXraw);
+    gyroY = Kalman_Update(&gyroYFilter, gyroYraw);
+    gyroZ = Kalman_Update(&gyroZFilter, gyroZraw);
 
 //    sensorData.Ax = accX;
 //    sensorData.Ay = accY;

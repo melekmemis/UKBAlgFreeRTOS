@@ -25,10 +25,10 @@ SUBDIRS := \
 Core/Src/bno055 \
 Core/Src/flightstatus \
 Core/Src/freertos \
-Core/Src \
 Core/Src/gps \
 Core/Src/kalmanfilter \
 Core/Src/lora \
+Core/Src \
 Core/Src/ms5611 \
 Core/Src/sdcard \
 Core/Src/system \

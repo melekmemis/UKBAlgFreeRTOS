@@ -32,6 +32,6 @@ typedef struct {
 extern SensorData sensorData;
 
 void LoraConfigure(void);
-void Lora_SendData(UART_HandleTypeDef *huart, uint8_t addrH, uint8_t addrL, uint8_t channel, void *data, size_t size);
+void LoraSendData(UART_HandleTypeDef *huart, uint8_t addrH, uint8_t addrL, uint8_t channel, void *data, size_t size);
 
 #endif

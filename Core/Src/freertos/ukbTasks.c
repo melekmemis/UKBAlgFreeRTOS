@@ -353,6 +353,9 @@ void RsSendTaskInit(void *argument)
 * @param argument: Not used
 * @retval None
 */
+RTC_TimeTypeDef sTime = {0};
+RTC_DateTypeDef sDate = {0};
+
 uint32_t loraSayac = 0;
 /* USER CODE END Header_LoRaTaskInit */
 void LoRaTaskInit(void *argument)
@@ -365,12 +368,12 @@ void LoRaTaskInit(void *argument)
 	  	loraSayac++;
 
 
-//		HAL_RTC_GetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
-//		HAL_RTC_GetDate(&hrtc, &sDate, RTC_FORMAT_BIN);
+		HAL_RTC_GetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
+		HAL_RTC_GetDate(&hrtc, &sDate, RTC_FORMAT_BIN);
 //
-//		sensorData.saat = sTime.Hours;
-//		sensorData.dakika = sTime.Minutes;
-//		sensorData.saniye = sTime.Seconds;
+		sensorData.saat = sTime.Hours;
+		sensorData.dakika = sTime.Minutes;
+		sensorData.saniye = sTime.Seconds;
 	    sensorData.Ax = accX;
 	    sensorData.Ay = accY;
 	    sensorData.Az = accZ;
@@ -385,7 +388,7 @@ void LoRaTaskInit(void *argument)
 		sensorData.gpsIrtifa = myData.altitude;
 		sensorData.uyduSayisi = myData.satelliteCount;
 		sensorData.irtifa = altitude;
-//		Lora_SendData(&huart2, 0x00, 3, 23, &sensorData, sizeof(SensorData));
+		LoraSendData(&huart2, 0x00, 3, 23, &sensorData, sizeof(SensorData));
 		osDelay(200);
   }
   /* USER CODE END LoRaTaskInit */
