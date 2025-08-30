@@ -59,9 +59,7 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 #define drogueOut_Pin GPIO_PIN_2
 #define drogueOut_GPIO_Port GPIOE
-#define mainOut_Pin GPIO_PIN_2
-#define mainOut_GPIO_Port GPIOA
-#define loraRST_Pin GPIO_PIN_11
+#define loraRST_Pin GPIO_PIN_3
 #define loraRST_GPIO_Port GPIOE
 #define loraAux_Pin GPIO_PIN_1
 #define loraAux_GPIO_Port GPIOC
@@ -79,6 +77,8 @@ void Error_Handler(void);
 #define bnoADR_GPIO_Port GPIOE
 #define gpsRST_Pin GPIO_PIN_13
 #define gpsRST_GPIO_Port GPIOB
+#define mainOut_Pin GPIO_PIN_11
+#define mainOut_GPIO_Port GPIOA
 #define sdSS_Pin GPIO_PIN_15
 #define sdSS_GPIO_Port GPIOA
 #define loraM0_Pin GPIO_PIN_8

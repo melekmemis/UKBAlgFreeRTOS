@@ -1,9 +1,0 @@
-../Core/Src/system/system_init.c:17:6:SystemClock_Config	3
-../Core/Src/system/system_init.c:64:6:MX_I2C1_Init	2
-../Core/Src/system/system_init.c:98:6:MX_I2C2_Init	2
-../Core/Src/system/system_init.c:132:6:MX_SPI3_Init	2
-../Core/Src/system/system_init.c:170:6:MX_USART1_UART_Init	2
-../Core/Src/system/system_init.c:203:6:MX_USART2_UART_Init	2
-../Core/Src/system/system_init.c:236:6:MX_USART3_UART_Init	2
-../Core/Src/system/system_init.c:267:6:MX_DMA_Init	1
-../Core/Src/system/system_init.c:289:6:MX_GPIO_Init	1

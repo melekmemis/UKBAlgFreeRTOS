@@ -1,3 +1,0 @@
-../Core/Src/ms5611/ms5611UKB.c:30:6:calculateAltitude	1
-../Core/Src/ms5611/ms5611UKB.c:35:6:MS5611_Start	1
-../Core/Src/ms5611/ms5611UKB.c:56:6:altitudeControl	1
