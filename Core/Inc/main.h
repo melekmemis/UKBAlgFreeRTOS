@@ -99,6 +99,8 @@ extern UART_HandleTypeDef huart2;
 extern UART_HandleTypeDef huart3;
 extern DMA_HandleTypeDef hdma_usart1_rx;
 extern DMA_HandleTypeDef hdma_usart3_rx;
+
+#define SD_SPI_HANDLE hspi3
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus

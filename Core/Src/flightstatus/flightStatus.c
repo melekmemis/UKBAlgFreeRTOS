@@ -67,7 +67,7 @@ void checkFlightStatus() {
 		dragStep = 1;
 		statusPackData1 |= (1 << 5);
 		HAL_GPIO_WritePin(drogueOut_GPIO_Port, drogueOut_Pin, 1);
-		osDelay(500);
+		osDelay(600);
 		HAL_GPIO_WritePin(drogueOut_GPIO_Port, drogueOut_Pin, 0);
 	}
 
@@ -77,7 +77,7 @@ void checkFlightStatus() {
 		statusPackData1 |= (1 << 6);
 		statusPackData1 |= (1 << 7);
 		HAL_GPIO_WritePin(mainOut_GPIO_Port, mainOut_Pin, 1);
-		osDelay(500);
+		osDelay(600);
 		HAL_GPIO_WritePin(mainOut_GPIO_Port, mainOut_Pin, 0);
 	}
 }

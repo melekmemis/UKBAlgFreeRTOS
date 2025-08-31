@@ -18,6 +18,8 @@
 #include "testDevice.h"
 #include "nmea_parse.h"
 #include "loraLib.h"
+#include "flightStatus.h"
+#include "sdCard.h"
 
 /* Definitions for BnoTask */
 osThreadId_t BnoTaskHandle;
@@ -400,6 +402,7 @@ void LoRaTaskInit(void *argument)
 * @param argument: Not used
 * @retval None
 */
+uint32_t fsSayac = 0;
 /* USER CODE END Header_flightStatTaskInit */
 void flightStatTaskInit(void *argument)
 {
@@ -407,7 +410,9 @@ void flightStatTaskInit(void *argument)
   /* Infinite loop */
   for(;;)
   {
-    osDelay(1);
+	  fsSayac++;
+	  checkFlightStatus();
+	  osDelay(100);
   }
   /* USER CODE END flightStatTaskInit */
 }
@@ -418,14 +423,29 @@ void flightStatTaskInit(void *argument)
 * @param argument: Not used
 * @retval None
 */
+uint8_t sdCardIsOpen = 1;
 /* USER CODE END Header_sdCardTaskInit */
 void sdCardTaskInit(void *argument)
 {
   /* USER CODE BEGIN sdCardTaskInit */
+	dataSize = 0;
+	yazdi = 0;
+	osDelay(1000);
+	sdCardOpen();
   /* Infinite loop */
   for(;;)
   {
-    osDelay(1);
+	  if(sdCardIsOpen) {
+		  sdCardWrite();
+	  }
+	  if(mainStep == 1 && altitude < 100) {
+		  sdCardClose();
+		  sdCardIsOpen = 0;
+	  }
+//	  sdCardOpen();
+//	  sdCardWrite();
+//	  sdCardClose();
+	  osDelay(100);
   }
   /* USER CODE END sdCardTaskInit */
 }

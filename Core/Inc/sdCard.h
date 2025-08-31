@@ -12,6 +12,9 @@
 extern "C" {
 #endif
 
+extern int dataSize;
+extern int yazdi;
+
 void sdCardOpen();
 void sdCardClose();
 void sdCardWrite();

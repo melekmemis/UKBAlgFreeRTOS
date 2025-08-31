@@ -44,7 +44,8 @@ Core/Src/freertos/ukbTasks.o: ../Core/Src/freertos/ukbTasks.c \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h \
  ../Core/Inc/ukbTasks.h ../Core/Inc/bno055UKB.h ../Core/Inc/ms5611UKB.h \
- ../Core/Inc/testDevice.h ../Core/Inc/nmea_parse.h ../Core/Inc/loraLib.h
+ ../Core/Inc/testDevice.h ../Core/Inc/nmea_parse.h ../Core/Inc/loraLib.h \
+ ../Core/Inc/flightStatus.h ../Core/Inc/sdCard.h
 ../Core/Inc/main.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 ../Core/Inc/stm32f4xx_hal_conf.h:
@@ -96,3 +97,5 @@ Core/Src/freertos/ukbTasks.o: ../Core/Src/freertos/ukbTasks.c \
 ../Core/Inc/testDevice.h:
 ../Core/Inc/nmea_parse.h:
 ../Core/Inc/loraLib.h:
+../Core/Inc/flightStatus.h:
+../Core/Inc/sdCard.h:
