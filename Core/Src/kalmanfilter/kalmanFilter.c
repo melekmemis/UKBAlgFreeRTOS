@@ -41,10 +41,10 @@ void Kalman_Init_All(void) {
     Kalman_Init(&gyroYFilter, 0.02f, 0.2f, 0.0f);
     Kalman_Init(&gyroZFilter, 0.02f, 0.2f, 0.0f);
 
-    Kalman_Init(&pitchFilter, 0.05f, 0.5f, 0.0f);
-    Kalman_Init(&rollFilter, 0.05f, 0.5f, 0.0f);
-    Kalman_Init(&yawFilter, 0.05f, 0.5f, 0.0f);
+    Kalman_Init(&pitchFilter, 0.04f, 0.4f, 0.0f);
+    Kalman_Init(&rollFilter, 0.04f, 0.4f, 0.0f);
+    Kalman_Init(&yawFilter, 0.04f, 0.4f, 0.0f);
 
-    Kalman_Init(&pressureFilter, 0.005f, 1.0f, 1013.25f);
-    Kalman_Init(&altitudeFilter, 0.005f, 1.0f, 0.0f);
+    Kalman_Init(&pressureFilter, 0.005f, 0.05f, 1013.25f);
+    Kalman_Init(&altitudeFilter, 0.005f, 0.05f, 0.0f);
 }

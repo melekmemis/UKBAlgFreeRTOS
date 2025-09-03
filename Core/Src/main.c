@@ -97,12 +97,12 @@ int main(void)
   HAL_Delay(500);
   bno055_initialize();
 
-  HAL_GPIO_WritePin(drogueOut_GPIO_Port, drogueOut_Pin, 1);
-  HAL_Delay(600);
-  HAL_GPIO_WritePin(drogueOut_GPIO_Port, drogueOut_Pin, 0);
-  HAL_GPIO_WritePin(mainOut_GPIO_Port, mainOut_Pin, 1);
-  HAL_Delay(600);
-  HAL_GPIO_WritePin(mainOut_GPIO_Port, mainOut_Pin, 0);
+//  HAL_GPIO_WritePin(drogueOut_GPIO_Port, drogueOut_Pin, 1);
+//  HAL_Delay(600);
+//  HAL_GPIO_WritePin(drogueOut_GPIO_Port, drogueOut_Pin, 0);
+//  HAL_GPIO_WritePin(mainOut_GPIO_Port, mainOut_Pin, 1);
+//  HAL_Delay(600);
+//  HAL_GPIO_WritePin(mainOut_GPIO_Port, mainOut_Pin, 0);
 
   HAL_Delay(50);
   HAL_GPIO_WritePin(buzzer_GPIO_Port, buzzer_Pin, 0);

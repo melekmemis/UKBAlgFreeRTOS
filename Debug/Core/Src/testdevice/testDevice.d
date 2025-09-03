@@ -34,7 +34,7 @@ Core/Src/testdevice/testDevice.o: ../Core/Src/testdevice/testDevice.c \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h \
  ../Core/Inc/testDevice.h ../Core/Inc/bno055UKB.h ../Core/Inc/ms5611UKB.h \
- ../Core/Inc/flightStatus.h
+ ../Core/Inc/flightStatus.h ../Core/Inc/kalmanFilter.h
 ../Core/Inc/main.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 ../Core/Inc/stm32f4xx_hal_conf.h:
@@ -74,3 +74,4 @@ Core/Src/testdevice/testDevice.o: ../Core/Src/testdevice/testDevice.c \
 ../Core/Inc/bno055UKB.h:
 ../Core/Inc/ms5611UKB.h:
 ../Core/Inc/flightStatus.h:
+../Core/Inc/kalmanFilter.h:
