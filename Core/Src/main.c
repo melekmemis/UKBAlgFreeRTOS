@@ -24,6 +24,7 @@
 #include "system_init.h"
 #include "ukbTasks.h"
 #include "kalmanFilter.h"
+#include "bno055UKB.h"
 /* Private typedef -----------------------------------------------------------*/
 
 /* Private define ------------------------------------------------------------*/
@@ -90,6 +91,21 @@ int main(void)
   MX_USART2_UART_Init();
   MX_USART3_UART_Init();
   MX_FATFS_Init();
+
+  HAL_GPIO_WritePin(buzzer_GPIO_Port, buzzer_Pin, 1);
+
+  HAL_Delay(500);
+  bno055_initialize();
+
+  HAL_GPIO_WritePin(drogueOut_GPIO_Port, drogueOut_Pin, 1);
+  HAL_Delay(600);
+  HAL_GPIO_WritePin(drogueOut_GPIO_Port, drogueOut_Pin, 0);
+  HAL_GPIO_WritePin(mainOut_GPIO_Port, mainOut_Pin, 1);
+  HAL_Delay(600);
+  HAL_GPIO_WritePin(mainOut_GPIO_Port, mainOut_Pin, 0);
+
+  HAL_Delay(50);
+  HAL_GPIO_WritePin(buzzer_GPIO_Port, buzzer_Pin, 0);
 
   /* Init scheduler */
   osKernelInitialize();

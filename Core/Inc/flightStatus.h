@@ -15,6 +15,8 @@ extern "C" {
 extern int liftOff, burnOut, altThrs, angleCond,
     altCond, dragStep, secAltCond, mainStep;
 
+extern uint8_t durum;
+
 void checkFlightStatus();
 
 #ifdef __cplusplus

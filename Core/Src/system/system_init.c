@@ -366,9 +366,10 @@ void MX_GPIO_Init(void)
   __HAL_RCC_GPIOD_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOE, drogueOut_Pin|loraRST_Pin|bnoPS0_Pin
+  HAL_GPIO_WritePin(GPIOE, mainOut_Pin|bnoPS0_Pin
                           |bnoPS1_Pin|bnoADR_Pin|loraM1_Pin, GPIO_PIN_RESET);
   HAL_GPIO_WritePin(GPIOE, bnoRST_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(GPIOE, loraRST_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(buzzer_GPIO_Port, buzzer_Pin, GPIO_PIN_RESET);
@@ -378,11 +379,11 @@ void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(GPIOB, gpsRST_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, mainOut_Pin|sdSS_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, drogueOut_Pin|sdSS_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pins : drogueOut_Pin loraRST_Pin bnoRST_Pin bnoPS0_Pin
+  /*Configure GPIO pins : mainOut_Pin loraRST_Pin bnoRST_Pin bnoPS0_Pin
                            bnoPS1_Pin bnoADR_Pin loraM1_Pin */
-  GPIO_InitStruct.Pin = drogueOut_Pin|loraRST_Pin|bnoRST_Pin|bnoPS0_Pin
+  GPIO_InitStruct.Pin = mainOut_Pin|loraRST_Pin|bnoRST_Pin|bnoPS0_Pin
                           |bnoPS1_Pin|bnoADR_Pin|loraM1_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
@@ -415,12 +416,12 @@ void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : mainOut_Pin */
-  GPIO_InitStruct.Pin = mainOut_Pin;
+  /*Configure GPIO pin : drogueOut_Pin */
+  GPIO_InitStruct.Pin = drogueOut_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(mainOut_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(drogueOut_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pin : sdSS_Pin */
   GPIO_InitStruct.Pin = sdSS_Pin;

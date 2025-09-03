@@ -47,14 +47,14 @@ osThreadId_t RsTaskHandle;
 const osThreadAttr_t RsTask_attributes = {
   .name = "RsTask",
   .stack_size = 256 * 4,
-  .priority = (osPriority_t) osPriorityNormal,
+  .priority = (osPriority_t) osPriorityRealtime,
 };
 /* Definitions for RsSendTask */
 osThreadId_t RsSendTaskHandle;
 const osThreadAttr_t RsSendTask_attributes = {
   .name = "RsSendTask",
   .stack_size = 256 * 4,
-  .priority = (osPriority_t) osPriorityNormal,
+  .priority = (osPriority_t) osPriorityRealtime,
 };
 /* Definitions for LoRaTask */
 osThreadId_t LoRaTaskHandle;
@@ -116,7 +116,6 @@ uint8_t bnoSayac = 0;
 void BnoTaskInit(void *argument)
 {
   /* USER CODE BEGIN 5 */
-	osDelay(200);
 	bno055_initialize();
   /* Infinite loop */
   for(;;)
@@ -390,6 +389,7 @@ void LoRaTaskInit(void *argument)
 		sensorData.gpsIrtifa = myData.altitude;
 		sensorData.uyduSayisi = myData.satelliteCount;
 		sensorData.irtifa = altitude;
+		sensorData.durum = durum;
 		LoraSendData(&huart2, 0x00, 3, 23, &sensorData, sizeof(SensorData));
 		osDelay(200);
   }
@@ -407,6 +407,7 @@ uint32_t fsSayac = 0;
 void flightStatTaskInit(void *argument)
 {
   /* USER CODE BEGIN flightStatTaskInit */
+  durum = 1;
   /* Infinite loop */
   for(;;)
   {

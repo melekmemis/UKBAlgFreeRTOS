@@ -33,7 +33,7 @@ Core/Src/ms5611/ms5611UKB.o: ../Core/Src/ms5611/ms5611UKB.c \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
- ../Core/Inc/kalmanFilter.h
+ ../Core/Inc/kalmanFilter.h ../Core/Inc/testDevice.h
 ../Core/Inc/ms5611UKB.h:
 ../Core/Inc/ms5611.h:
 ../Core/Inc/main.h:
@@ -71,3 +71,4 @@ Core/Src/ms5611/ms5611UKB.o: ../Core/Src/ms5611/ms5611UKB.c \
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
 ../Core/Inc/kalmanFilter.h:
+../Core/Inc/testDevice.h:
