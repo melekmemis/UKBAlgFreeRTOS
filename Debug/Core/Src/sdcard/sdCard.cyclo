@@ -1,3 +1,0 @@
-../Core/Src/sdcard/sdCard.c:22:6:sdCardOpen	1
-../Core/Src/sdcard/sdCard.c:27:6:sdCardClose	1
-../Core/Src/sdcard/sdCard.c:31:6:sdCardWrite	2

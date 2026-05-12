@@ -32,7 +32,7 @@ void calculateAltitude() {
 	if (mode == sitMode) {
 		altitude = 44330.0 * (1.0 - pow((currentPressure / 1013.25f), 0.1903));
 	} else altitude = 44330.0 * (1.0 - pow((currentPressure / referencePressure), 0.1903));
-    altitude = Kalman_Update(&altitudeFilter, altitude);
+    altitude = KalmanUpdate(&altitudeFilter, altitude);
 }
 
 void MS5611_Start(){
@@ -48,7 +48,7 @@ void MS5611_Start(){
 	  temperature = ms5611_struct.TEMP / 100.0;  // °C
 	  pressure = ms5611_struct.P    / 100.0;  // hPa
 	  referencePressure = pressure;                     // İlk basıncı referans al
-	  pressure = Kalman_Update(&pressureFilter, pressure);
+	  pressure = KalmanUpdate(&pressureFilter, pressure);
 	  currentPressure   = pressure;
 
 	  calculateAltitude();           // altitude = 0 (çünkü ratio 1)

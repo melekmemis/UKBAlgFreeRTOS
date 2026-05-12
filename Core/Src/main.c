@@ -73,7 +73,7 @@ extern const osThreadAttr_t sdCardTask_attributes;
 int main(void)
 {
   /* MCU Configuration--------------------------------------------------------*/
-  Kalman_Init_All();
+  KalmanInitAll();
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
   HAL_Init();
 
@@ -92,7 +92,7 @@ int main(void)
   MX_USART3_UART_Init();
   MX_FATFS_Init();
 
-  HAL_GPIO_WritePin(buzzer_GPIO_Port, buzzer_Pin, 1);
+//  HAL_GPIO_WritePin(buzzer_GPIO_Port, buzzer_Pin, 1);
 
   HAL_Delay(500);
   bno055_initialize();
@@ -105,7 +105,7 @@ int main(void)
 //  HAL_GPIO_WritePin(mainOut_GPIO_Port, mainOut_Pin, 0);
 
   HAL_Delay(50);
-  HAL_GPIO_WritePin(buzzer_GPIO_Port, buzzer_Pin, 0);
+//  HAL_GPIO_WritePin(buzzer_GPIO_Port, buzzer_Pin, 0);
 
   /* Init scheduler */
   osKernelInitialize();

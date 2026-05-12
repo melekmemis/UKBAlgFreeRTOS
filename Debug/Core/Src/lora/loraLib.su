@@ -1,3 +1,0 @@
-../Core/Src/lora/loraLib.c:7:15:loraCheckSumCalc	56	dynamic
-../Core/Src/lora/loraLib.c:20:6:LoraConfigure	32	static
-../Core/Src/lora/loraLib.c:44:6:LoraSendData	56	dynamic

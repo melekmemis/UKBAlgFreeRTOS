@@ -1,3 +1,0 @@
-../Core/Src/kalmanfilter/kalmanFilter.c:15:6:Kalman_Init	1
-../Core/Src/kalmanfilter/kalmanFilter.c:23:7:Kalman_Update	1
-../Core/Src/kalmanfilter/kalmanFilter.c:35:6:Kalman_Init_All	1

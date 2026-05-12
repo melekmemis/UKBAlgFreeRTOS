@@ -176,42 +176,42 @@ void modeCheck() {
 			floatBytes[2] = rxDataReceived[3];
 			floatBytes[3] = rxDataReceived[4];
 			altitude = uint8_arrayi_float32_ye_donustur(floatBytes);
-			altitude = Kalman_Update(&altitudeFilter, altitude);
+			altitude = KalmanUpdate(&altitudeFilter, altitude);
 
 			floatBytes[0] = rxDataReceived[5];
 			floatBytes[1] = rxDataReceived[6];
 			floatBytes[2] = rxDataReceived[7];
 			floatBytes[3] = rxDataReceived[8];
 			pressure = uint8_arrayi_float32_ye_donustur(floatBytes);
-			pressure = Kalman_Update(&pressureFilter, pressure);
+			pressure = KalmanUpdate(&pressureFilter, pressure);
 
 			floatBytes[0] = rxDataReceived[9];
 			floatBytes[1] = rxDataReceived[10];
 			floatBytes[2] = rxDataReceived[11];
 			floatBytes[3] = rxDataReceived[12];
 			accX = uint8_arrayi_float32_ye_donustur(floatBytes)/9.81f;
-			accX = Kalman_Update(&accXFilter, accX);
+			accX = KalmanUpdate(&accXFilter, accX);
 
 			floatBytes[0] = rxDataReceived[13];
 			floatBytes[1] = rxDataReceived[14];
 			floatBytes[2] = rxDataReceived[15];
 			floatBytes[3] = rxDataReceived[16];
 			accY = uint8_arrayi_float32_ye_donustur(floatBytes)/9.81f;
-			accY = Kalman_Update(&accYFilter, accY);
+			accY = KalmanUpdate(&accYFilter, accY);
 
 			floatBytes[0] = rxDataReceived[17];
 			floatBytes[1] = rxDataReceived[18];
 			floatBytes[2] = rxDataReceived[19];
 			floatBytes[3] = rxDataReceived[20];
 			accZ = uint8_arrayi_float32_ye_donustur(floatBytes)/9.81f;
-			accZ = Kalman_Update(&accZFilter, accZ);
+			accZ = KalmanUpdate(&accZFilter, accZ);
 
 			floatBytes[0] = rxDataReceived[21];
 			floatBytes[1] = rxDataReceived[22];
 			floatBytes[2] = rxDataReceived[23];
 			floatBytes[3] = rxDataReceived[24];
 			pitch = uint8_arrayi_float32_ye_donustur(floatBytes);
-			pitch = Kalman_Update(&pitchFilter, pitch);
+			pitch = KalmanUpdate(&pitchFilter, pitch);
 
 
 			floatBytes[0] = rxDataReceived[25];
@@ -219,14 +219,14 @@ void modeCheck() {
 			floatBytes[2] = rxDataReceived[27];
 			floatBytes[3] = rxDataReceived[28];
 			roll = uint8_arrayi_float32_ye_donustur(floatBytes);
-			roll = Kalman_Update(&rollFilter, roll);
+			roll = KalmanUpdate(&rollFilter, roll);
 
 			floatBytes[0] = rxDataReceived[29];
 			floatBytes[1] = rxDataReceived[30];
 			floatBytes[2] = rxDataReceived[31];
 			floatBytes[3] = rxDataReceived[32];
 			yaw = uint8_arrayi_float32_ye_donustur(floatBytes);
-			yaw = Kalman_Update(&yawFilter, yaw);
+			yaw = KalmanUpdate(&yawFilter, yaw);
 
 		}
 

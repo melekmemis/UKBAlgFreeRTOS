@@ -46,7 +46,7 @@ void checkFlightStatus() {
 
 	lastAcc = accZ;
 
-	if(altitude > 1000) {
+	if(altitude < -20) {
 		altThrs = 1;
 		statusPackData1 |= (1 << 2);
 	}
@@ -56,7 +56,7 @@ void checkFlightStatus() {
 		statusPackData1 |= (1 << 3);
 	}
 
-	if (altitude < lastAltitude && altThrs) {
+	if (altitude > lastAltitude && altThrs) {
 	    dusSayac++;
 	    if (dusSayac >= yukSayac) {
 	    	altCond = 1;
@@ -71,7 +71,7 @@ void checkFlightStatus() {
 		statusPackData1 |= (1 << 5);
 		durum = 2;
 		HAL_GPIO_WritePin(drogueOut_GPIO_Port, drogueOut_Pin, 1);
-		osDelay(600);
+		osDelay(800);
 		HAL_GPIO_WritePin(drogueOut_GPIO_Port, drogueOut_Pin, 0);
 	}
 
@@ -82,7 +82,7 @@ void checkFlightStatus() {
 		statusPackData1 |= (1 << 7);
 		durum = 4;
 		HAL_GPIO_WritePin(mainOut_GPIO_Port, mainOut_Pin, 1);
-		osDelay(600);
+		osDelay(800);
 		HAL_GPIO_WritePin(mainOut_GPIO_Port, mainOut_Pin, 0);
 	}
 }

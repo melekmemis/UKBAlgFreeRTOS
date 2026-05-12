@@ -25,9 +25,9 @@ extern KalmanFilter gyroXFilter, gyroYFilter, gyroZFilter;
 extern KalmanFilter pitchFilter, rollFilter, yawFilter;
 extern KalmanFilter pressureFilter, altitudeFilter;
 
-void Kalman_Init(KalmanFilter *kf, float q, float r, float initial_value);
-float Kalman_Update(KalmanFilter *kf, float measurement);
-void Kalman_Init_All(void);
+void KalmanInit(KalmanFilter *kf, float q, float r, float initialvalue);
+float KalmanUpdate(KalmanFilter *kf, float measurement);
+void KalmanInitAll(void);
 
 #ifdef __cplusplus
 }

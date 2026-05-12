@@ -12,15 +12,15 @@ KalmanFilter gyroXFilter, gyroYFilter, gyroZFilter;
 KalmanFilter pitchFilter, rollFilter, yawFilter;
 KalmanFilter pressureFilter, altitudeFilter;
 
-void Kalman_Init(KalmanFilter *kf, float q, float r, float initial_value) {
+void KalmanInit(KalmanFilter *kf, float q, float r, float initialValue) {
     kf->q = q;
     kf->r = r;
-    kf->x = initial_value;
+    kf->x = initialValue;
     kf->p = 1.0f;
     kf->k = 0.0f;
 }
 
-float Kalman_Update(KalmanFilter *kf, float measurement) {
+float KalmanUpdate(KalmanFilter *kf, float measurement) {
     kf->p = kf->p + kf->q;
 
     kf->k = kf->p / (kf->p + kf->r);
@@ -32,19 +32,19 @@ float Kalman_Update(KalmanFilter *kf, float measurement) {
     return kf->x;
 }
 
-void Kalman_Init_All(void) {
-    Kalman_Init(&accXFilter, 0.02f, 0.2f, 0.0f);
-    Kalman_Init(&accYFilter, 0.02f, 0.2f, 0.0f);
-    Kalman_Init(&accZFilter, 0.02f, 0.2f, 0.0f);
+void KalmanInitAll(void) {
+    KalmanInit(&accXFilter, 0.02f, 0.2f, 0.0f);
+    KalmanInit(&accYFilter, 0.02f, 0.2f, 0.0f);
+    KalmanInit(&accZFilter, 0.02f, 0.2f, 0.0f);
 
-    Kalman_Init(&gyroXFilter, 0.02f, 0.2f, 0.0f);
-    Kalman_Init(&gyroYFilter, 0.02f, 0.2f, 0.0f);
-    Kalman_Init(&gyroZFilter, 0.02f, 0.2f, 0.0f);
+    KalmanInit(&gyroXFilter, 0.02f, 0.2f, 0.0f);
+    KalmanInit(&gyroYFilter, 0.02f, 0.2f, 0.0f);
+    KalmanInit(&gyroZFilter, 0.02f, 0.2f, 0.0f);
 
-    Kalman_Init(&pitchFilter, 0.04f, 0.4f, 0.0f);
-    Kalman_Init(&rollFilter, 0.04f, 0.4f, 0.0f);
-    Kalman_Init(&yawFilter, 0.04f, 0.4f, 0.0f);
+    KalmanInit(&pitchFilter, 0.04f, 0.4f, 0.0f);
+    KalmanInit(&rollFilter, 0.04f, 0.4f, 0.0f);
+    KalmanInit(&yawFilter, 0.04f, 0.4f, 0.0f);
 
-    Kalman_Init(&pressureFilter, 0.005f, 0.05f, 1013.25f);
-    Kalman_Init(&altitudeFilter, 0.005f, 0.05f, 0.0f);
+    KalmanInit(&pressureFilter, 0.005f, 0.05f, 1013.25f);
+    KalmanInit(&altitudeFilter, 0.005f, 0.05f, 0.0f);
 }

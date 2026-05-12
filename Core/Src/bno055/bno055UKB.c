@@ -28,34 +28,36 @@ volatile float gyroXraw, gyroYraw, gyroZraw;
 float magnX, magnY, magnZ;
 float qw, qx, qy, qz;
 
-int8_t i2c_bus_write(uint8_t dev_addr, uint8_t reg_addr, uint8_t *data, uint8_t len)
+int8_t bnoBusWrite(uint8_t devAddr, uint8_t regAddr, uint8_t *data, uint8_t len)
 {
-    return HAL_I2C_Mem_Write(&hi2c2, dev_addr << 1, reg_addr,
+    return HAL_I2C_Mem_Write(&hi2c2, devAddr << 1, regAddr,
                              I2C_MEMADD_SIZE_8BIT, data, len, 100) == HAL_OK ? 0 : -1;
 }
 
-int8_t i2c_bus_read(uint8_t dev_addr, uint8_t reg_addr, uint8_t *data, uint8_t len)
+int8_t bnoBusRead(uint8_t devAddr, uint8_t regAddr, uint8_t *data, uint8_t len)
 {
-    return HAL_I2C_Mem_Read(&hi2c2, dev_addr << 1, reg_addr,
+    return HAL_I2C_Mem_Read(&hi2c2, devAddr << 1, regAddr,
                             I2C_MEMADD_SIZE_8BIT, data, len, 100) == HAL_OK ? 0 : -1;
 }
 
-void delay_msec(u32 msec)
+void bnoDelayMsec(u32 msec)
 {
     HAL_Delay(msec);
 }
 
 void bno055_initialize(void)
 {
-    bno055.bus_write = i2c_bus_write;
-    bno055.bus_read = i2c_bus_read;
-    bno055.delay_msec = delay_msec;
+    bno055.bus_write = bnoBusWrite;
+    bno055.bus_read = bnoBusRead;
+    bno055.delay_msec = bnoDelayMsec;
     bno055.dev_addr = BNO055_I2C_ADDR1;
     bno055_init(&bno055);
 
     bno055_set_power_mode(BNO055_POWER_MODE_NORMAL);
     bno055.delay_msec(10);
     bno055_set_operation_mode(BNO055_OPERATION_MODE_CONFIG);
+    bno055.delay_msec(10);
+    bno055_set_accel_range(BNO055_ACCEL_RANGE_16G);
     bno055.delay_msec(10);
     bno055_set_axis_remap_value(0x09);
     bno055.delay_msec(10);
@@ -101,15 +103,15 @@ void bno055ReadAngles(void)
     	pitchRaw = pitchRaw + 180;
     }
 
-    pitch = Kalman_Update(&pitchFilter, pitchRaw);
-    roll = Kalman_Update(&rollFilter, rollRaw);
-    yaw = Kalman_Update(&yawFilter, yawRaw);
-    accX = Kalman_Update(&accXFilter, accXraw);
-    accY = Kalman_Update(&accYFilter, accYraw);
-    accZ = Kalman_Update(&accZFilter, accZraw);
-    gyroX = Kalman_Update(&gyroXFilter, gyroXraw);
-    gyroY = Kalman_Update(&gyroYFilter, gyroYraw);
-    gyroZ = Kalman_Update(&gyroZFilter, gyroZraw);
+    pitch = KalmanUpdate(&pitchFilter, pitchRaw);
+    roll = KalmanUpdate(&rollFilter, rollRaw);
+    yaw = KalmanUpdate(&yawFilter, yawRaw);
+    accX = KalmanUpdate(&accXFilter, accXraw);
+    accY = KalmanUpdate(&accYFilter, accYraw);
+    accZ = KalmanUpdate(&accZFilter, accZraw);
+    gyroX = KalmanUpdate(&gyroXFilter, gyroXraw);
+    gyroY = KalmanUpdate(&gyroYFilter, gyroYraw);
+    gyroZ = KalmanUpdate(&gyroZFilter, gyroZraw);
 
 //    sensorData.Ax = accX;
 //    sensorData.Ay = accY;

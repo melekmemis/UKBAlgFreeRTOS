@@ -1,3 +1,0 @@
-../Core/Src/lora/loraLib.c:7:15:loraCheckSumCalc	2
-../Core/Src/lora/loraLib.c:20:6:LoraConfigure	1
-../Core/Src/lora/loraLib.c:44:6:LoraSendData	1

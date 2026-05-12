@@ -1,6 +1,0 @@
-../Core/Src/gps/nmea_parse.c:21:5:gps_checksum	4
-../Core/Src/gps/nmea_parse.c:42:5:nmea_GPGGA	11
-../Core/Src/gps/nmea_parse.c:104:5:nmea_GPGSA	6
-../Core/Src/gps/nmea_parse.c:135:5:nmea_GPGLL	9
-../Core/Src/gps/nmea_parse.c:183:6:nmea_parse	12
-../Core/Src/gps/nmea_parse.c:216:6:ringBuffer	2

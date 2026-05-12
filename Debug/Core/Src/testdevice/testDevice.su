@@ -1,5 +1,0 @@
-../Core/Src/testdevice/testDevice.c:38:9:checkSumCalc2	16	static
-../Core/Src/testdevice/testDevice.c:61:13:parseCommand	16	static
-../Core/Src/testdevice/testDevice.c:102:7:uint8_arrayi_float32_ye_donustur	24	static
-../Core/Src/testdevice/testDevice.c:115:6:float_to_bytes	24	static
-../Core/Src/testdevice/testDevice.c:129:6:modeCheck	8	static
