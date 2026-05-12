@@ -9,7 +9,7 @@ FreeRTOS tabanlı, STM32F407 üzerinde çalışan gerçek zamanlı roket uçuş 
 - [Donanım](#donanım)
 - [Yazılım Mimarisi](#yazılım-mimarisi)
 - [Görevler (Tasks)](#görevler-tasks)
-- [Uçuş Durumu Makinesi](#uçuş-durumu-makinesi)
+- [Uçuş State Machine](#uçuş-state-machine)
 - [Kalman Filtresi](#kalman-filtresi)
 - [Proje Yapısı](#proje-yapısı)
 - [Derleme ve Yükleme](#derleme-ve-yükleme)
@@ -60,7 +60,7 @@ Görevler arası iletişim FreeRTOS bildirim mekanizmaları (`vTaskNotifyGiveFro
 
 ---
 
-## Uçuş Durumu Makinesi
+## Uçuş State Machine
 
 `flightStatus.c` içinde tanımlı ardışık faz tespiti:
 
