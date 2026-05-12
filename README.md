@@ -146,7 +146,7 @@ UKBAlgFreeRTOS/
 
 1. Repoyu klonlayın:
    ```bash
-   git clone https://github.com/<kullanici-adi>/UKBAlgFreeRTOS.git
+   git clone https://github.com/melekmemis/UKBAlgFreeRTOS.git
    ```
 
 2. STM32CubeIDE'yi açın → `File > Open Projects from File System` → proje klasörünü seçin.
